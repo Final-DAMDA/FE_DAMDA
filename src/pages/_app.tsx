@@ -8,6 +8,7 @@ import GlobalHead from '@/components/common/GlobalHead';
 import Layout from '@/components/common/Layout';
 import { CookiesProvider } from 'react-cookie';
 
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

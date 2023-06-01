@@ -23,6 +23,14 @@ const nextConfig = {
     });
     return config;
   },
+  async rewrites() {
+    return [
+      {
+        source: '/kakaoApi/:path*',
+        destination: 'https://kauth.kakao.com/:path*',
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
