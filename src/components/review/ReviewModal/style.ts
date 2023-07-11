@@ -64,4 +64,5 @@ export const Auth = styled.div`
 export const Body = styled.div`
   ${theme.font.regular_14}
   line-height: 1.6;
+  white-space: pre-wrap;
 `;

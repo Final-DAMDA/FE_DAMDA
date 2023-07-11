@@ -20,7 +20,7 @@ function Header() {
   };
 
   useEffect(() => {
-    getUserData();
+    // getUserData();
   }, []);
 
   return (
