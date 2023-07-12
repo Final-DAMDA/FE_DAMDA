@@ -9,9 +9,10 @@ import { useQuery } from '@tanstack/react-query';
 import { getFormList } from '@/apis/form';
 import { UserSurveyFormDataType } from '@/types/api/formTypes';
 import { getTotalPrice } from '@/utils';
+import { dummySurveyForm as data } from '@/constants/dummySurveyForm';
 
 function Index() {
-  const { data } = useQuery(['FormList'], getFormList);
+  // const { data } = useQuery(['FormList'], getFormList);
 
   const router = useRouter();
   const UsersurveyRef = useRef<HTMLDivElement | null>(null);
@@ -42,7 +43,7 @@ function Index() {
   useEffect(() => {
     if (!data) return;
 
-    const copiedData = data.sort((a, b) => a.questionOrder - b.questionOrder);
+    const copiedData = data.sort((a, b) => a.questionOrder - b.questionOrder) as UserSurveyFormDataType[];
 
     copiedData
       .find((data) => data.questionIdentify === 'SERVICEDURATION')

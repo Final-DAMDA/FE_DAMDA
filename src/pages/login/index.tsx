@@ -47,8 +47,11 @@ function Login() {
 
   useEffect(() => {
     // handleRedirect();
-    tmpLogin();
-    router.push(history[0]);
+
+    setTimeout(() => {
+      tmpLogin();
+      router.push(history[0]);
+    }, 2000);
   }, []);
 
   return (

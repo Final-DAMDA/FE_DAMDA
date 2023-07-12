@@ -15,13 +15,13 @@ function ServiceDuration() {
       <div className="head" onClick={onClick}>
         {isOpen ? (
           <>
-            <AiOutlineDown />
-            예시 보기
+            <AiOutlineUp />
+            예시 접기
           </>
         ) : (
           <>
-            <AiOutlineUp />
-            예시 접기
+            <AiOutlineDown />
+            예시 보기
           </>
         )}
       </div>

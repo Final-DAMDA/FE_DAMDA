@@ -16,7 +16,7 @@ interface HeaderProps {
 function HeaderLayout({ user, isMenuOpen, menuHandler, toSurvey, isInView }: HeaderProps) {
   const router = useRouter(); // useRouter hook을 사용하여 현재 페이지의 경로를 가져옵니다.
   const { pathname } = router; // 현재 페이지의 경로를 pathname 변수에 할당합니다.
-
+  console.log(user.data);
   return (
     <>
       <S.Logo className="ir-text">
