@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useQuery } from '@tanstack/react-query';
 import { getFAQs } from '@/apis/support';
+import { dummyFAQ as faqs } from '@/constants/dummyFAQ';
 
 import FrequentlyAskedQuestions from '@/components/common/FAQ/FrequentlyAskedQuestions';
 import Category from '../Category';
@@ -12,23 +13,23 @@ import * as S from './style';
 import { faqType } from '@/types/constants/faqType';
 
 function CustomerCenterLayout() {
-  const { data: faqs } = useQuery({
-    queryKey: ['faqs'],
-    queryFn: getFAQs,
-  });
+  // const { data: faqs } = useQuery({
+  //   queryKey: ['faqs'],
+  //   queryFn: getFAQs,
+  // });
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<faqType[]>([]);
   const [categories, setCategories] = useState<string[]>([]);
   const [activeCategory, setActiveCategory] = useState('전체');
 
   useEffect(() => {
     const allCategories = ['전체', ...new Set(faqs?.map((faq: faqType) => faq.qnaCategory) as string[])];
     setCategories(allCategories);
-  }, [faqs]);
+  }, []);
 
   useEffect(() => {
     setData(faqs);
-  }, [faqs]);
+  }, []);
 
   const filterFAQHandler = (category: string) => {
     if (category === '전체') return setData(faqs);

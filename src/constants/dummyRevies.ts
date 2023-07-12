@@ -14,6 +14,23 @@ export const bestReviewDummy = {
 
 export const reviewDummy = [
   {
+    id: 1,
+    title: '저보다 제 집을 깨끗하게 치워요ㅋㅋ',
+    content: `제가 정리하는것보다 굉장히 효율적이고 깔끔해서 정말 마음에 듭니다! 감사합니다😊`,
+    name: '심익명',
+    bestReview: false,
+    address: '경기 안산시',
+    date: '2023-01-11',
+    before: [
+      'https://cdn.imweb.me/upload/S20221013551b2718f486d/58a69bed7a6f2.jpeg',
+      'https://cdn.imweb.me/upload/S20221013551b2718f486d/97c7f56462c49.jpeg',
+    ],
+    after: [
+      'https://cdn.imweb.me/upload/S20221013551b2718f486d/5f9a2e9e1c201.jpg',
+      'https://cdn.imweb.me/upload/S20221013551b2718f486d/f32ffdbd70d8e.jpg',
+    ],
+  },
+  {
     id: 5,
     title: '이제는 옷정리가 한결 수월해질 것 같아요ㅎㅎ',
     content: `옷이 그렇게 많다고 생각한 적은 한 번도 없었는데, 실제로 한 번 다 끄집어내서 보니까 정말 많다는 걸 깨달았어요...
@@ -84,23 +101,7 @@ export const reviewDummy = [
       'https://cdn.imweb.me/upload/S20221013551b2718f486d/dd260c84c3f8e.jpg',
     ],
   },
-  {
-    id: 1,
-    title: '저보다 제 집을 깨끗하게 치워요ㅋㅋ',
-    content: `제가 정리하는것보다 굉장히 효율적이고 깔끔해서 정말 마음에 듭니다! 감사합니다😊`,
-    name: '심익명',
-    bestReview: false,
-    address: '경기 안산시',
-    date: '2023-01-11',
-    before: [
-      'https://cdn.imweb.me/upload/S20221013551b2718f486d/58a69bed7a6f2.jpeg',
-      'https://cdn.imweb.me/upload/S20221013551b2718f486d/97c7f56462c49.jpeg',
-    ],
-    after: [
-      'https://cdn.imweb.me/upload/S20221013551b2718f486d/5f9a2e9e1c201.jpg',
-      'https://cdn.imweb.me/upload/S20221013551b2718f486d/f32ffdbd70d8e.jpg',
-    ],
-  },
+
   {
     id: 0,
     title: '혼자서는 막막했던 정리가 깔끔해졌어요',

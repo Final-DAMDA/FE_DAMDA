@@ -23,6 +23,7 @@ export const ProfileImage = styled.div`
   position: relative;
   width: 24px;
   height: 24px;
+  padding: 0 2px;
   border: 1px solid ${theme.colors.main_blue};
   border-radius: 4px;
 

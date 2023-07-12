@@ -4,20 +4,27 @@ import Carousel from '@/components/common/Carousel';
 import { useQuery } from '@tanstack/react-query';
 import { getReviews } from '@/apis/review';
 import { ReviewData } from '@/types/review';
+import { reviewDummy } from '@/constants/dummyRevies';
 
 function UserReview() {
-  const { data: review } = useQuery(['review'], getReviews);
+  // const { data: review } = useQuery(['review'], getReviews);
   const [reviewData, setReviewData] = useState<ReviewData[]>();
 
   useEffect(() => {
-    if (!review) return;
-    console.log(review.data);
-
-    const bestReview = review?.data.filter((item) => item.bestReview)[0];
-    const firstItem = review?.data.filter((item) => !item.bestReview)[0];
+    const bestReview = reviewDummy.filter((item) => item.bestReview)[0];
+    const firstItem = reviewDummy.filter((item) => !item.bestReview)[0];
 
     setReviewData([bestReview, firstItem]);
-  }, [review]);
+  }, []);
+  // useEffect(() => {
+  //   if (!review) return;
+  //   console.log(review.data);
+
+  //   const bestReview = review?.data.filter((item) => item.bestReview)[0];
+  //   const firstItem = review?.data.filter((item) => !item.bestReview)[0];
+
+  //   setReviewData([bestReview, firstItem]);
+  // }, [review]);
 
   return (
     <>
