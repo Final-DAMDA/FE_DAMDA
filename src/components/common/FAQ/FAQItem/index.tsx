@@ -52,6 +52,7 @@ function FAQItem({ type, faq, index }: FAQItemProps) {
         </S.CardHeader>
 
         <S.CardContent isFAQOpen={isFAQOpen} style={{ height }}>
+          <hr />
           {type === 'manager-apply' && <p dangerouslySetInnerHTML={replaceStringsWithTags(contents)} ref={descRef}></p>}
           {type === 'support' && <p ref={descRef}>{contents}</p>}
         </S.CardContent>
