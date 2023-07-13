@@ -13,7 +13,7 @@ function SideFloating() {
         <Image src={'/icons/Yolda_logo.svg'} alt="열다" width={120} height={56} />
       </S.Logo>
       <S.Form href={'/usersurvey'}>간편 견적</S.Form>
-      <S.Form className="white" href={'https://www.yolda.me/login/chat'}>
+      <S.Form className="white" href={'https://www.yolda.me/login/chat'} target="_blank">
         상담 신청
       </S.Form>
       <S.Copyright>2023 powerd by yolda</S.Copyright>

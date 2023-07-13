@@ -65,7 +65,6 @@ const phoneValid = (phone: UserSurveyForm) => {
 };
 
 const addressValid = (address: UserSurveyForm) => {
-  console.log(address.answer.split(' '));
   const regex = /^[가-힣0-9a-zA-Z\s]+$/;
   let errorMsg: ErrorMsg[] = [];
   if (!regex.test(address.answer)) {

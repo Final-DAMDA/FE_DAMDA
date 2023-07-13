@@ -66,7 +66,7 @@ function Select({ handleUpdateFormValue, formData, children }: UserSurveyFormSel
       </AnimatePresence>
       {children && children}
       {questionIdentify === 'SERVICEDURATION' && (
-        <Link href="https://www.yolda.me/login/chat">
+        <Link href="https://www.yolda.me/login/chat" target="_blank">
           <span>{placeHolder}</span>
         </Link>
       )}

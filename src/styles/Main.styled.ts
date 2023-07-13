@@ -152,8 +152,8 @@ export const MainContentSection = styled.section``;
 export const MainPersonButton = styled(MainContentButton)<{ itemIndex: number }>`
   padding: 1rem 1.6rem;
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  gap: 2px;
   position: relative;
   width: ${({ itemIndex }) => {
     switch (itemIndex) {
@@ -179,8 +179,10 @@ export const MainPersonButton = styled(MainContentButton)<{ itemIndex: number }>
 export const MainPriceButton = styled(MainContentButton)<{ index: number }>`
   position: relative;
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  gap: 2px;
+  padding-bottom: 5px;
+  padding-left: 15px;
   width: ${({ index }) => {
     switch (index) {
       case 0:
@@ -221,7 +223,7 @@ export const MainPriceButton = styled(MainContentButton)<{ index: number }>`
 
   .how {
     position: absolute;
-    right: -100%;
+    right: -90%;
   }
 `;
 

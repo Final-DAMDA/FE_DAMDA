@@ -25,7 +25,7 @@ function FabButton({ mainContainerRef }: FabProp) {
         goToTop();
         break;
       case 'kakao':
-        router.push('https://www.yolda.me/login/chat');
+        window.open('https://www.yolda.me/login/chat', '_blank', 'noopener, noreferrer');
         break;
     }
   };

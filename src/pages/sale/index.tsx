@@ -22,7 +22,7 @@ function SalePage() {
   };
 
   const handleNavigation = (route: string) => {
-    router.push(route);
+    window.open(route, '_blank', 'noopener, noreferrer');
   };
 
   return (

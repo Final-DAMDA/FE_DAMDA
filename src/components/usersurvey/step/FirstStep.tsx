@@ -25,7 +25,6 @@ function FirstStep({ handleNextStep, userSurveyFormData }: FirstStepProps) {
       return formValue.some((data) => data.questionNumber === questionNumber);
     });
     const msg = isValidAnswer(formValue);
-    console.log(formValue);
     setIsValid(msg.length === 0 && isAllRequiredQuestionsAnswered);
   };
 
