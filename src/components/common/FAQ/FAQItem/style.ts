@@ -40,15 +40,14 @@ export const CardHeader = styled.header`
 `;
 
 export const CardContent = styled.div<{ isFAQOpen: boolean }>`
-  ${({ isFAQOpen }) =>
-    isFAQOpen &&
-    css`
-      padding-top: 10px;
-      margin-top: 10px;
-      border-top: 1px solid ${theme.colors.yolda_black_1};
-    `}
-  transition: height 200ms ease-in-out;
+  transition: height 300ms ease-in-out;
   overflow: hidden;
+
+  hr {
+    height: 1px;
+    border: 0;
+    background-color: ${theme.colors.yolda_black_1};
+  }
 
   strong {
     font-weight: 700;
