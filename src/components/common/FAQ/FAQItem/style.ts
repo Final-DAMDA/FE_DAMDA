@@ -43,6 +43,12 @@ export const CardContent = styled.div<{ isFAQOpen: boolean }>`
   transition: height 300ms ease-in-out;
   overflow: hidden;
 
+  hr {
+    height: 1px;
+    border: 0;
+    background-color: ${theme.colors.yolda_black_1};
+  }
+
   strong {
     font-weight: 700;
   }

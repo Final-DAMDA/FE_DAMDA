@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useQuery } from '@tanstack/react-query';
 import { getFAQs } from '@/apis/support';
-import { dummyFAQ as faqs } from '@/constants/dummyFAQ';
+import { customerCenterFAQs } from '@/constants/customerCenterFAQs';
 
 import FrequentlyAskedQuestions from '@/components/common/FAQ/FrequentlyAskedQuestions';
 import Category from '../Category';
@@ -12,28 +12,30 @@ import customerCenterImg from 'public/img/customerServiceCenter.png';
 import * as S from './style';
 import { faqType } from '@/types/constants/faqType';
 
+const allCategories = ['전체', ...new Set(customerCenterFAQs.map((faq) => faq.qnaCategory || ''))];
+
 function CustomerCenterLayout() {
   // const { data: faqs } = useQuery({
   //   queryKey: ['faqs'],
   //   queryFn: getFAQs,
   // });
 
-  const [data, setData] = useState<faqType[]>([]);
-  const [categories, setCategories] = useState<string[]>([]);
+  const [data, setData] = useState(customerCenterFAQs);
+  const [categories, setCategories] = useState<string[]>(allCategories);
   const [activeCategory, setActiveCategory] = useState('전체');
 
-  useEffect(() => {
-    const allCategories = ['전체', ...new Set(faqs?.map((faq: faqType) => faq.qnaCategory) as string[])];
-    setCategories(allCategories);
-  }, []);
+  // useEffect(() => {
+  //   const allCategories = ['전체', ...new Set(faqs?.map((faq: faqType) => faq.qnaCategory) as string[])];
+  //   setCategories(allCategories);
+  // }, [faqs]);
 
-  useEffect(() => {
-    setData(faqs);
-  }, []);
+  // useEffect(() => {
+  //   setData(faqs);
+  // }, [faqs]);
 
   const filterFAQHandler = (category: string) => {
-    if (category === '전체') return setData(faqs);
-    const newData = faqs?.filter((faq: faqType) => faq.qnaCategory === category);
+    if (category === '전체') return setData(customerCenterFAQs);
+    const newData = customerCenterFAQs.filter((faq) => faq.qnaCategory === category);
     setData(newData);
   };
 

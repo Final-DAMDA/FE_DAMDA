@@ -11,24 +11,24 @@ interface CategoryButtonProps {
 function CategoryButton({ category, filterFAQHandler, activeCategory, setActiveCategory }: CategoryButtonProps) {
   const isActive = category === activeCategory;
 
-  const renderCategory = () => {
-    switch (category) {
-      case '전체':
-        return '전체';
+  // const renderCategory = () => {
+  //   switch (category) {
+  //     case '전체':
+  //       return '전체';
 
-      case 'PRICE':
-        return '가격';
+  //     case 'PRICE':
+  //       return '가격';
 
-      case 'SERVICE':
-        return '서비스 관련';
+  //     case 'SERVICE':
+  //       return '서비스 관련';
 
-      case 'ETC':
-        return '기타';
+  //     case 'ETC':
+  //       return '기타';
 
-      default:
-        break;
-    }
-  };
+  //     default:
+  //       break;
+  //   }
+  // };
 
   const clickHandler = (category: string) => {
     filterFAQHandler(category);
@@ -37,7 +37,7 @@ function CategoryButton({ category, filterFAQHandler, activeCategory, setActiveC
 
   return (
     <S.CategoryFilterButton type="button" isActive={isActive} onClick={() => clickHandler(category)}>
-      {renderCategory()}
+      {category}
     </S.CategoryFilterButton>
   );
 }
