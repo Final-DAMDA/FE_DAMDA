@@ -18,22 +18,22 @@ function FAQItem({ type, faq, index }: FAQItemProps) {
   const descRef = useRef<HTMLDivElement | null>(null);
   const { title, contents, info, qnaCategory } = faq;
 
-  const renderFaqCategory = () => {
-    let transformedCategory;
-    switch (qnaCategory) {
-      case 'PRICE':
-        return (transformedCategory = '가격');
+  // const renderFaqCategory = () => {
+  //   let transformedCategory;
+  //   switch (qnaCategory) {
+  //     case 'PRICE':
+  //       return (transformedCategory = '가격');
 
-      case 'SERVICE':
-        return (transformedCategory = '서비스 관련');
+  //     case 'SERVICE':
+  //       return (transformedCategory = '서비스 관련');
 
-      case 'ETC':
-        return (transformedCategory = '기타');
+  //     case 'ETC':
+  //       return (transformedCategory = '기타');
 
-      default:
-        break;
-    }
-  };
+  //     default:
+  //       break;
+  //   }
+  // };
 
   useEffect(() => {
     if (descRef.current !== null) {
@@ -47,13 +47,15 @@ function FAQItem({ type, faq, index }: FAQItemProps) {
         {isFAQOpen ? <FiArrowUpLeft /> : <FiArrowDownRight />}
 
         <S.CardHeader>
-          <strong>{info || renderFaqCategory()}</strong>
+          <strong>{info || faq.qnaCategory}</strong>
           <h3>{title}</h3>
         </S.CardHeader>
 
         <S.CardContent isFAQOpen={isFAQOpen} style={{ height }}>
-          {type === 'manager-apply' && <p dangerouslySetInnerHTML={replaceStringsWithTags(contents)} ref={descRef}></p>}
-          {type === 'support' && <p ref={descRef}>{contents}</p>}
+          <hr />
+          {/* {type === 'manager-apply' && <p dangerouslySetInnerHTML={replaceStringsWithTags(contents)} ref={descRef}></p>}
+          {type === 'support' && <p ref={descRef}>{contents}</p>} */}
+          <p dangerouslySetInnerHTML={replaceStringsWithTags(contents)} ref={descRef}></p>
         </S.CardContent>
       </S.FAQCard>
     </S.FAQItem>
